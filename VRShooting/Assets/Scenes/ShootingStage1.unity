@@ -121,6 +121,12 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!4 &55442645 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 400006, guid: f1d84cc28597f5641a3d9cbc4df7e306,
+    type: 3}
+  m_PrefabInstance: {fileID: 1764664197}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -213,12 +219,33 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1 &765277561 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100078, guid: f1d84cc28597f5641a3d9cbc4df7e306,
+    type: 3}
+  m_PrefabInstance: {fileID: 1764664197}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &765277563 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400080, guid: f1d84cc28597f5641a3d9cbc4df7e306,
     type: 3}
   m_PrefabInstance: {fileID: 1764664197}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &765277564
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 765277561}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c9f1a0e96624494190907685ccd482e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulltetPrefab: {fileID: 6641947227035169402, guid: 4690cafe3df776247b147e15cb71b7a5,
+    type: 3}
+  gunBarrelEnd: {fileID: 55442645}
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -313,9 +340,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 963194225}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 28c671904cf84d948a42ba677eb1179f, type: 3}
+  m_Script: {fileID: 11500000, guid: 336a46182c248144e8fc006c0ca607af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  angularVelocity: 30
 --- !u!1001 &1244709416
 PrefabInstance:
   m_ObjectHideFlags: 0
