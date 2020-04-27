@@ -7,6 +7,8 @@ public class Shooter : MonoBehaviour
 
     [SerializeField] GameObject bulltetPrefab;
     [SerializeField] Transform gunBarrelEnd;
+    [SerializeField] ParticleSystem gunParticle;
+    [SerializeField] AudioSource gunAudioSource;
 
     // Start is called before the first frame update
     void Start()
@@ -26,5 +28,8 @@ public class Shooter : MonoBehaviour
     void Shoot()
     {
         Instantiate(bulltetPrefab, gunBarrelEnd.position, gunBarrelEnd.rotation);
+
+        gunParticle.Play();
+        gunAudioSource.Play();
     }
 }

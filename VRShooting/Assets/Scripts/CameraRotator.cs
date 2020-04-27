@@ -18,7 +18,8 @@ public class CameraRotator : MonoBehaviour
     void Update()
     {
         var horizontalRotation = Input.GetAxis("Horizontal") * angularVelocity * Time.deltaTime;
-        var verticalRotation = Input.GetAxis("Vertical") * angularVelocity * Time.deltaTime;
+        // -: 상하 제어 반전
+        var verticalRotation = -Input.GetAxis("Vertical") * angularVelocity * Time.deltaTime;
 
         horizontalAngle += horizontalRotation;
         verticalAngle += verticalRotation;

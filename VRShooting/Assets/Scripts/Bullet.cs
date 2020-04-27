@@ -5,6 +5,7 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     [SerializeField] float speed = 20f;
+    [SerializeField] ParticleSystem hitParticlePrefab;
     
     // Start is called before the first frame update
     void Start()
@@ -24,6 +25,9 @@ public class Bullet : MonoBehaviour
     private void OnTriggerEnter(Collider other) 
     {
         other.SendMessage("OnHitBullet");
+
+        Instantiate(hitParticlePrefab, transform.position, transform.rotation);
+
         Destroy(gameObject);
     }
 }

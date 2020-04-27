@@ -4,10 +4,20 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+    [SerializeField] AudioClip spawnClip;
+    [SerializeField] AudioClip hitClip;
+
+    [SerializeField] Collider enemyCollider;
+    [SerializeField] Renderer enemyRenderer;
+
+    AudioSource audioSource;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        audioSource = GetComponent<AudioSource>();
+
+        audioSource.PlayOneShot(spawnClip);
     }
 
     // Update is called once per frame
@@ -17,6 +27,11 @@ public class Enemy : MonoBehaviour
 
     void OnHitBullet()
     {
-        Destroy(gameObject);
+        audioSource.PlayOneShot(hitClip);
+
+        enemyCollider.enabled = false;
+        enemyRenderer.enabled = false;
+
+        Destroy(gameObject, 1f);
     }
 }
