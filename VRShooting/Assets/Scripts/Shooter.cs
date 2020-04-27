@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerGun : MonoBehaviour
+public class Shooter : MonoBehaviour
 {
 
     [SerializeField] GameObject bulltetPrefab;
