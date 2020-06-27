@@ -2,30 +2,27 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemySpawner : MonoBehaviour
+public class EnemySpawner : Spawner
 {
+    [SerializeField] Enemy[] enemyPrefabs;
+    [SerializeField] Enemy.Type[] enemyTypes;
 
-    [SerializeField] Enemy enemyPrefab;
-
-    Enemy enemy;
-
-    // Start is called before the first frame update
-    void Start()
+    public void OnChildDestroy()
     {
-        
+        count = Mathf.Max(0, count-1);
     }
 
-    // Update is called once per frame
-    void Update()
+    public override void Spawn()
     {
-        
-    }
-
-    public void Spawn()
-    {
-        if(enemy==null)
-         {
-             enemy = Instantiate(enemyPrefab, transform.position, transform.rotation);
-         }
+        Vector3 position = base.GetSpawonPosition();
+        int index = Random.Range(0,enemyPrefabs.Length);
+        if(count < maxCount && timer >= spawnCooltme) 
+        {
+            timer = 0;
+            Enemy enemy = Instantiate(enemyPrefabs[index], position, transform.rotation);
+            enemy.type = enemyTypes[index];
+            enemy.SetSpawnerDelegate(new OnChildDestroyCallback(OnChildDestroy));
+            count++;
+        }
     }
 }

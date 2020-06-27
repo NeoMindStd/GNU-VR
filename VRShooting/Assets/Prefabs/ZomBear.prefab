@@ -14,9 +14,10 @@ GameObject:
   - component: {fileID: 1932434508426215132}
   - component: {fileID: 5440365190881541677}
   - component: {fileID: 1461680868927753040}
-  m_Layer: 9
+  - component: {fileID: 7954618039076092874}
+  m_Layer: 0
   m_Name: ZomBear
-  m_TagString: Untagged
+  m_TagString: enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -46,7 +47,7 @@ Animator:
   m_GameObject: {fileID: 3955978925841714661}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: c236aa7ad6dcabe47abc7d2cf903ae71, type: 3}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2cd6bf77cac24414c8e134b0c0e7aed3, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -83,7 +84,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 1
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 80
   m_CollisionDetection: 0
 --- !u!114 &5440365190881541677
 MonoBehaviour:
@@ -97,10 +98,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b76649b6dfad8e45afec54ff6b832cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnClip: {fileID: 8300000, guid: 62366b8d2c37a49dca550841c741317f, type: 3}
-  hitClip: {fileID: 8300000, guid: 1d4840678e677424b8921716c72397ea, type: 3}
+  spawnClip: {fileID: 0}
+  hitClip: {fileID: 8300000, guid: 62366b8d2c37a49dca550841c741317f, type: 3}
   enemyCollider: {fileID: 4198973576331004107}
   enemyRenderer: {fileID: 3955978925836501167}
+  hitParticlePrefab: {fileID: 19800000, guid: ef39ae7291c751249b296f00bf6fb042, type: 3}
+  type: 0
 --- !u!82 &1461680868927753040
 AudioSource:
   m_ObjectHideFlags: 0
@@ -197,6 +200,28 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!195 &7954618039076092874
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3955978925841714661}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 6
+  m_Acceleration: 20
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!1 &3955978925841714663
 GameObject:
   m_ObjectHideFlags: 0
@@ -207,7 +232,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3955978925841945031}
   - component: {fileID: 3955978925836501167}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Zombear
   m_TagString: Untagged
   m_Icon: {fileID: 0}
